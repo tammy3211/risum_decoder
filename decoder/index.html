@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RisuAI Module Decoder</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f0f0f0; color: #333; padding: 2em; }
+        h1 { color: #111; }
+        #drop-zone { border: 2px dashed #ccc; border-radius: 20px; padding: 40px; text-align: center; cursor: pointer; }
+        #drop-zone.dragover { border-color: #333; background-color: #e9e9e9; }
+        #file-input { display: none; }
+        #status { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>RisuAI Module (.risum) Decoder</h1>
+    <p>Drag & drop a .risum file below, or click to select a file.</p>
+
+    <div id="drop-zone">
+        <p>Drop file here</p>
+        <input type="file" id="file-input" accept=".risum">
+    </div>
+
+    <div id="status"></div>
+    <pre id="log-output" style="background-color: #fff; border: 1px solid #ccc; padding: 10px; white-space: pre-wrap; word-wrap: break-word; max-height: 300px; overflow-y: auto;"></pre>
+
+    <!-- JSZip for creating zip files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <!-- FileSaver.js for saving the file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+    
+    <!-- Our decoder logic, now loaded as a module -->
+    <script type="module" src="decoder.js?v=2"></script>
+</body>
+</html>
